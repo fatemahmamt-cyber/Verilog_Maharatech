@@ -7,17 +7,17 @@
 */
 //##################################################################################################
 /* ------------------------------------ Module Declarations ------------------------------------- */
-module controllerFSM (clk, rstn, EDF, EDB, T1, T2, T3, Pcount, Tcount, updown, enable, emptyFlag, fullFlag, emptyAlarm, fullAlarm);
+module controllerFSM (clk, rstn, frontEdgeDetector, backEdgeDetector, T1, T2, T3, Pcount, Tcount, updown, enable, emptyFlag, fullFlag, emptyAlarm, fullAlarm);
 // ----------------------------------- Parameter Declarations ----------------------------------- //
 // ------------------------------------- Inputs Declarations ------------------------------------ //
-input clk, rstn, EDF, EDB, T1, T2, T3;
+input clk, rstn, frontEdgeDetector, backEdgeDetector, T1, T2, T3;
 input [2:0] Pcount;
 // ------------------------------------ Outputs Declarations ------------------------------------ //
 output emptyFlag, fullFlag;
 output reg  updown, enable, emptyAlarm, fullAlarm;
 output [1:0] Tcount;
 // -------------------------------------- Wire Declarations ------------------------------------- //
-wire [1:0] fb = {EDF, EDB};
+wire [1:0] fb = {frontEdgeDetector, backEdgeDetector};
 // -------------------------------------- Reg Declarations -------------------------------------- //
 // ---------------------------------------- Initial setup --------------------------------------- //
 // ------------------------------------ Instantiation Modules ----------------------------------- //
