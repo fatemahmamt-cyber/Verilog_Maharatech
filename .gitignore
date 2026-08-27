@@ -1,5 +1,8 @@
 work/
+transcript
 *.cr.mti
 *.mpf
 *.wlf
 *.xlsx
+*.ini
+*.bak
