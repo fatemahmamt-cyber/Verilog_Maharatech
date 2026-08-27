@@ -10,7 +10,7 @@
 module dflipflop (clk, rstn, D, Q);
 // ----------------------------------- Parameter Declarations ----------------------------------- //
 // ------------------------------------- Inputs Declarations ------------------------------------ //
-input reg clk, rstn, D;
+input clk, rstn, D;
 // ------------------------------------ Outputs Declarations ------------------------------------ //
 output reg Q;
 // -------------------------------------- Wire Declarations ------------------------------------- //
@@ -21,7 +21,7 @@ output reg Q;
 // --------------------------------------- Sequential Logic ------------------------------------- //
 always@ (posedge clk or negedge rstn)
 begin
-    if(~rstn) Q <= 0;
+    if(~rstn) Q <= 1;
     else Q <= D;
 end
 endmodule

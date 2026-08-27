@@ -15,20 +15,19 @@ input clk, rstn, frontSensor, backSensor, T1, T2, T3;
 output fullFlag, emptyFlag, fullAlarm, emptyAlarm;
 output [6:0] Pcountdisplay, Wtimetensdisplay, Wtimeunitsdisplay;
 // -------------------------------------- Wire Declarations ------------------------------------- //
+wire EDB, EDF, updown, enable;
+wire [1:0] Tcount;
+wire [2:0] Pcount;
 wire [4:0] addr = {Tcount, Pcount};
 wire [3:0] Pcount7segin = {1'b0, Pcount};
 wire [7:0] Wtime;
 wire [3:0] Wtimetens = Wtime[7:4];
 wire [3:0] Wtimeunits = Wtime[3:0];
-wire EDB, EDF, updown, enable;
-wire [1:0] Tcount;
-wire [2:0] Pcount;
-
 // -------------------------------------- Reg Declarations -------------------------------------- //
 // ---------------------------------------- Initial setup --------------------------------------- //
 // ------------------------------------ Instantiation Modules ----------------------------------- //
-edgeDetector frontEdgeDetector(clk, frontSensor, EDF);
-edgeDetector backEdgeDetector(clk, backSensor, EDB);
+edgeDetector frontEdgeDetector(clk, rstn, frontSensor, EDF);
+edgeDetector backEdgeDetector(clk, rstn, backSensor, EDB);
 controllerFSM controller(clk, rstn, EDF, EDB, T1, T2, T3, Pcount, Tcount, updown, enable, emptyFlag, fullFlag, emptyAlarm, fullAlarm);
 updownCounter #(3) PcountCounter(clk, rstn, updown, enable, Pcount);
 WtimeROM WtimeROM(addr, Wtime);

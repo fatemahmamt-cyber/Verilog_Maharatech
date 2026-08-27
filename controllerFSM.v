@@ -69,8 +69,7 @@ begin
                 end
             end
 
-            2'b00:  //no one entered
-            2'b11:  //one enterd and one quited
+            2'b00, 2'b11:  //one enterd or one quited 
             enable <= 0;
 
         endcase

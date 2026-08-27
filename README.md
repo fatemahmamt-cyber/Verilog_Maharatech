@@ -6,10 +6,10 @@
                 <td><b>Port</b></td><td><b>Description</b></td><td><b>Type</b></td><td><b>Possible Values</b></td>
             </thead>
             <tr>
-                <td>Front_Sensor</td><td>negative pulse when someone enters the queue</td><td>input</td><td>0, 1</td>
+                <td>Front_Sensor</td><td>Generates 0 when someone exits and 1 unless</td><td>input</td><td>0, 1</td>
             </tr>
             <tr>
-                <td>Back_Sensor</td><td>negative pulse when someone gets out of the queue</td><td>input</td><td>0, 1</td>
+                <td>Back_Sensor</td><td>Generates 0 when someone enters and 1 unless</td><td>input</td><td>0, 1</td>
             </tr>
             <tr>
                 <td>T1</td><td>0: teller1 unavailable <br> 1: teller1 available</td><td>input</td><td>0, 1</td>
