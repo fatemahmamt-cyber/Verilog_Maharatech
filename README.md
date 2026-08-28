@@ -82,7 +82,7 @@ ITIBQS (Top-Level)
 ## 📊 Sample Simulation Log Output
 ```
  ---------------------------------------- Test Bench ---------------------------------------
- Time | rstn | clk | frontSensor | backSensor | emptyFlag | fullFlag | emptyAlarm | fullAlarm | PcountDisplay
+ Time | rstn | clk  | frontSensor | backSensor | emptyFlag | fullFlag | emptyAlarm | fullAlarm | PcountDisplay
     0 | 0000 | 0000 | 00000000001 | 0000000001 | 000000001 | 00000000 | 0000000000 | 000000000 | 0000001111110
    50 | 0000 | 0001 | 00000000001 | 0000000001 | 000000001 | 00000000 | 0000000000 | 000000000 | 0000001111110
   100 | 0001 | 0000 | 00000000001 | 0000000001 | 000000001 | 00000000 | 0000000000 | 000000000 | 0000001111110
