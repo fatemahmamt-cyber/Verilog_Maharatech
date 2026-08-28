@@ -64,9 +64,9 @@ end
 initial // Displaying Conditions 
 begin
 $display("---------------------------------------- Test Bench ---------------------------------------");
-$display("Time | rstn | frontSensor | backSensor | emptyFlag | fullFlag | emptyAlarm | fullAlarm | PcountDisplay");
-$monitor("%4d | %4b | %11b | %10b | %9b | %8b | %10b | %9b | %13b",
-         $time, rstn, frontSensor, backSensor, emptyFlag, fullFlag, emptyAlarm, fullAlarm, Pcountdisplay);
+$display("Time | rstn | clk | frontSensor | backSensor | emptyFlag | fullFlag | emptyAlarm | fullAlarm | PcountDisplay");
+$monitor("%4d | %4b | %4b | %11b | %10b | %9b | %8b | %10b | %9b | %13b",
+         $time, rstn, clk, frontSensor, backSensor, emptyFlag, fullFlag, emptyAlarm, fullAlarm, Pcountdisplay);
 end
 
 // ------------------------------------ Instantiation Modules ----------------------------------- //
